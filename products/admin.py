@@ -9,3 +9,14 @@ class ItemAdmin(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(Item,ItemAdmin)
+
+# products/admin.py
+
+
+
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ('name', 'price', 'category')
+        search_fields = ('name', 'category')
+            list_filter = ('category',)
