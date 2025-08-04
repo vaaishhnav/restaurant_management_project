@@ -1,0 +1,25 @@
+<html>
+    <head><title>Restaurant Menu</title></head>
+    <body>
+        <h1>Menu</h1>
+        <ul id="menu-list">
+            </ul>
+        
+        <script>
+            fetch('/api/menu/')
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementbyId('menu-list');
+                data.forEach(item => {
+                const li = document.getElementbyId('li');
+                li.textContent = `${item.name} - {item.price}`;
+                list.appendChild(li);
+                });
+            })
+            .catch(error => {
+            console.error('Error loading menu:', error);
+            });
+        </script>
+    </body>
+
+</html>
