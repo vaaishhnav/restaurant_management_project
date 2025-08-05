@@ -7,6 +7,7 @@ from rest_framework.response import Response
 from .models import Item
 from .serializers import ItemSerializer
 
+
 '''
 NOTE: Conside this as a reference and follow this same coding structure or format to work on you tasks
 '''
@@ -46,4 +47,4 @@ def menu_list(request):
                 "price": 199.00
             }
         ]
-        return Response(menu)
+    return Response(menu)
