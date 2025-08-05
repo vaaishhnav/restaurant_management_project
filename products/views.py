@@ -48,3 +48,7 @@ def menu_list(request):
             }
         ]
     return Response(menu)
+
+def menu_view(request):
+    items = Item.objects.all()
+    return render(request, 'products/menu.html', {'items': items})
