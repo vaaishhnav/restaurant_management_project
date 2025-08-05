@@ -18,5 +18,5 @@ admin.site.register(Item,ItemAdmin)
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('name', 'price', 'category')
-        search_fields = ('name', 'category')
-            list_filter = ('category',)
+    search_fields = ('name', 'category')
+    list_filter = ('category',)
