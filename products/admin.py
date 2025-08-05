@@ -5,6 +5,8 @@ from .models import *
 # Custom Admins
 class ItemAdmin(admin.ModelAdmin):
     list_display = ['item_name','item_price','created_at']
+    search_fields = ['name']
+
 
 
 # Register your models here.
