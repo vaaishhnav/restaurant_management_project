@@ -8,6 +8,10 @@ def home(request):
            })
 
 
+from django.http import Http404
+
+def trigger_404(request):
+    raise Http404("Page not found")
 
 
 
