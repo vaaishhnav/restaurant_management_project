@@ -17,4 +17,15 @@ def trigger_404(request):
 
 
 
+def homepage(request):
+    items = MenuItem.objects.all()
+        return render(request, 'home/menu.html', {
+                'restaurant_name': settings.RESTAURANT_NAME,
+                'items': items
+            })
+
+
+
+
+
 
