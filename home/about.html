@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <title>About Us - {{ restaurant_name }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+    <div class="container">
+        <nav>
+            <a href="/">Home</a> |
+            <a href="/about/">About</a>
+        </nav>
+
+        <h1>About {{ restaurant_name }}</h1>
+
+        <div class="about-section">
+            <img src="{% static 'images/restaurant.jpg' %}" alt="Our Restaurant" class="about-image">
+            <p>
+                Welcome to {{ restaurant_name }}! We’ve been serving delicious food made with love since 1995.
+                Our commitment is to offer authentic, fresh, and flavorful dishes that make you feel at home.
+                Whether you're craving traditional favorites or modern twists, our menu is designed to satisfy.
+            </p>
+        </div>
+    </div>
+    </body>
+    </html>
