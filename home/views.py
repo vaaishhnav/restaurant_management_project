@@ -22,7 +22,8 @@ def about(request):
             'restaurant_name': restaurant.name if restaurant else "Our Restaurant"
     })
 
-
+def contact_us(request):
+    return render(request, 'home/contact_us.html')
 
 
 
