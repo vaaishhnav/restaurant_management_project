@@ -31,7 +31,7 @@ def homepage(request):
     items = MenuItem.objects.all()
         return render(request, 'home/menu.html', {
                 'restaurant_name': settings.RESTAURANT_NAME,
-                'items': items
+                'restaurant_phone' : settings.RESTAURANT_PHONE,
             })
 
 
