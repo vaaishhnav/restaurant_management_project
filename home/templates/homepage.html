@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ restaurant_name }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ restaurant_name }}</h1>
+        <p>Welcome to {{ restaurant_name }}! We’re delighted to have you here. Explore our delicious menu and enjoy your meal.</p>
+    </div>
+</body>
+</html>
