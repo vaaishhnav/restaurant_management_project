@@ -25,14 +25,22 @@ def about(request):
 def contact_us(request):
     return render(request, 'home/contact_us.html')
 
-
-
 def homepage(request):
-    items = MenuItem.objects.all()
-        return render(request, 'home/menu.html', {
-                'restaurant_name': settings.RESTAURANT_NAME,
-                'restaurant_phone' : settings.RESTAURANT_PHONE,
-            })
+    return render(request, 'home/homepage.html', {
+                'restaurant_name': settings.RESTAURANT_NAME
+                    })
+
+
+ 
+   
+          
+     
+
+
+
+       
+               
+
 
 
 
