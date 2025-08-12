@@ -26,9 +26,17 @@ def contact_us(request):
     return render(request, 'home/contact_us.html')
 
 def homepage(request):
-    return render(request, 'home/homepage.html', {
-                'restaurant_name': settings.RESTAURANT_NAME
-                    })
+    try:
+        restaurant = Restaurant.objects.first()
+        restaurant_name = restaurant.name if restaurant else "Our Restaurant"
+    except Exception as e:
+        restaurant_name = "Our Restaurant"
+
+    return render(request, 'home/homepage.html', {'restaurant_name': restaurant_name })
+
+
+            
+          
 
 
  
