@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+    <form method="GET" action="" class="search-form">
+            <input type="text" name="q" placeholder="Search menu items..." />
+            <button type="submit">Search</button>
+    </form>
     <div class="container">
         <img src="{'https://imgs.search.brave.com/EDvwgK5ryyDsMmOHgZLKnMsHakasczKGI7Z_7fYjt5Y/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMDgv/MjQ2LzQwNC9zbWFs/bC9yZXN0YXVyYW50/LXRyYWRpdGlvbmFs/LWZvb2QtdmludGFn/ZS1zdHlsZS1kZXNp/Z24tbG9nby12ZWN0/b3IuanBn' %}" alt="{{ restaurant_name }} Logo" class="logo">
         <h1>{{ restaurant_name }}</h1>
