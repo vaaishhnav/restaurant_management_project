@@ -1,5 +1,5 @@
 from django import forms
-from .models import ContactSubmission, Feedabck
+from .models import ContactSubmission, Feedabck, Contact
 
 
 class ContactForm(forms.ModelForm):
@@ -18,3 +18,8 @@ class FeedbackForm(forms.ModelForm):
            })
         }
         labels = {"comment": "Your feedback"}
+
+class ContactForm(forms.ModelForm):
+        class Meta:
+                model = Contact
+                        fields = ['name', 'email']
