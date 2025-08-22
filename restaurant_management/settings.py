@@ -130,3 +130,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 RESTAURANT_NAME = "The Honest Spoon"
 RESTAURANT_PHONE = "+91-9876543210"
+DEFAULT_FROM_EMAIL = 'noreply@myrestaurant.com'
+RESTAURANT_EMAIL = 'myrestaurant@gmail.com'
