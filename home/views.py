@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import ContactForm
+from .models import Restaurant
+
 
 
 def home(request):
@@ -58,7 +60,10 @@ def contact_view(request):
                         form = ContactForm()
 
                             return render(request, 'contact/contact.html', {'form': form})
-            
+
+def homepage(request):
+        restaurant = Restaurant.objects.first()  # assuming single restaurant
+            return render(request, 'home/homepage.html', {'restaurant': restaurant})            
           
 
 
