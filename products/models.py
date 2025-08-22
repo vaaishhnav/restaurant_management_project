@@ -28,3 +28,13 @@ class MenuItem(models.Model):
                                                                     if self.image and hasattr(self.image, 'url'):
                                                                                 return self.image.url
                                                                                         return ''
+
+class Restaurant(models.Model):
+        name = models.CharField(max_length=100)
+            address = models.TextField(blank=True)
+                phone = models.CharField(max_length=20, blank=True)
+                    # Store opening hours as JSON/dict: {"Mon-Fri": "11am-9pm", "Sat-Sun": "10am-10pm"}
+                        opening_hours = models.JSONField(default=dict, blank=True)
+
+                            def __str__(self):
+                                    return self.item_name
