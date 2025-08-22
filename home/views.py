@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import ContactForm
 
+
 def home(request):
     restaurant_name = getattr(settings, 'RESTAURANT_NAME', 'My Restaurant')
     return render(request, 'home/menu.html', {
@@ -27,16 +28,36 @@ def contact_us(request):
 
 def homepage(request):
     query = request.GET.get('q')  # get search term from ?q=
-        if query:
-                menu_items = MenuItem.objects.filter(name__icontains=query)
-                    else:
-                            menu_items = MenuItem.objects.all()  # show all if no query
+    if query:
+        menu_items = MenuItem.objects.filter(name__icontains=query)
+    else:
+        menu_items = MenuItem.objects.all()  # show all if no query
 
-                                return render(request, 'home/homepage.html', {
+        return render(request, 'home/homepage.html', {
                                         'menu_items': menu_items,
                                                 'query': query,
                                                     })
+def contact_view(request):
+        if request.method == "POST":
+            form = ContactForm(request.POST)
+            if form.is_valid():
+                contact = form.save()
 
+                 # Send email notification
+                subject = f"New Contact Message from {contact.name}"
+                message = f"Name: {contact.name}\nEmail: {contact.email}\n\nMessage:\n{contact.message}"
+                send_mail(
+                subject,
+                message,
+                settings.DEFAULT_FROM_EMAIL,
+                [settings.RESTAURANT_EMAIL],
+                fail_silently=False,
+                                  )
+                return redirect('contact_success')
+                else:
+                        form = ContactForm()
+
+                            return render(request, 'contact/contact.html', {'form': form})
             
           
 
