@@ -5,6 +5,7 @@ from .models import ContactSubmission
 class ContactSubmissionAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'submitted_at')
     search_fields = ('name', 'email')
-
+    
+@admin.register(Restaurant)
 class RestaurantAdmin(admin.ModelAdmin):
-        list_display = ('name', 'phone')
+    list_display = ('name', 'phone')
