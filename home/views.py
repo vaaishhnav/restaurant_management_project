@@ -62,8 +62,17 @@ def contact_view(request):
                             return render(request, 'contact/contact.html', {'form': form})
 
 def homepage(request):
-        restaurant = Restaurant.objects.first()  # assuming single restaurant
-            return render(request, 'home/homepage.html', {'restaurant': restaurant})            
+        restaurant = Restaurant.objects.first()
+
+            # --- CART HANDLING ---
+                cart = request.session.get('cart', {})
+                    cart_count = sum(cart.values())  # total items in cart
+
+                        return render(request, 'home/homepage.html', {
+                                'restaurant_name': restaurant.name if restaurant else "Our Restaurant",
+                                        'restaurant_address': restaurant.address if restaurant else "Address not available",
+                                                'cart_count': cart_count,
+                                                    })      
           
 
 
