@@ -3,9 +3,15 @@ from .models import ContactSubmission, Feedabck, Contact
 
 
 class ContactForm(forms.ModelForm):
-    class Meta:
-        model = ContactSubmission
-            fields = ['name', 'email']
+        class Meta:
+                model = Contact
+                        fields = ['name', 'email', 'message']
+
+                            def clean_message(self):
+                                    message = self.cleaned_data.get('message')
+                                            if not message or len(message.strip()) < 5:
+                                                        raise forms.ValidationError("Message must be at least 5 characters long.")
+                                                                return message
 
 class FeedbackForm(forms.ModelForm):
     class Meta:
