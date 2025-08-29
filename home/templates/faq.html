@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <title>FAQ - Restaurant</title>
+            <style>
+                    body {
+                                font-family: Arial, sans-serif;
+                                            margin: 40px;
+                                                        line-height: 1.6;
+                                                                }
+                                                                        h1 {
+                                                                                    color: #333;
+                                                                                                margin-bottom: 20px;
+                                                                                                        }
+                                                                                                                .faq {
+                                                                                                                            margin-bottom: 20px;
+                                                                                                                                    }
+                                                                                                                                            .question {
+                                                                                                                                                        font-weight: bold;
+                                                                                                                                                                    color: #2c3e50;
+                                                                                                                                                                            }
+                                                                                                                                                                                    .answer {
+                                                                                                                                                                                                margin-left: 15px;
+                                                                                                                                                                                                            color: #555;
+                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                        </style>
+                                                                                                                                                                                                                        </head>
+                                                                                                                                                                                                                        <body>
+                                                                                                                                                                                                                            <h1>Frequently Asked Questions</h1>
+
+                                                                                                                                                                                                                                {% for faq in faqs %}
+                                                                                                                                                                                                                                        <div class="faq">
+                                                                                                                                                                                                                                                    <p class="question">Q: {{ faq.question }}</p>
+                                                                                                                                                                                                                                                                <p class="answer">A: {{ faq.answer }}</p>
+                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                            {% endfor %}
+
+                                                                                                                                                                                                                                                                                <p><a href="{% url 'home' %}">⬅ Back to Home</a></p>
+                                                                                                                                                                                                                                                                                </body>
+                                                                                                                                                                                                                                                                                </html>
+                                                                                                                                                                                                                                                                                
